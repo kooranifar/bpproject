@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sharedphotos</title>
+</head>
+<body>
+	<h1>Shared Photos</h1>
+    <ul>
+        {% for album in albums %}
+            {% for picture in album.picture_set.all %}
+                {% if picture.is_shared %}
+                    {% if picture.is_deleted == False %}
+                        <img src="{{picture.image.url}}"><br>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </ul>
+</body>
+</html>

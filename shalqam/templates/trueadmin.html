@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Admin</title>
+</head>
+<body>
+    <h1>Hi, you can manage shared photos</h1>
+    <p>Sessions are:</p>
+    <ul>
+        {% for album in albums %}
+            <li><a href="album/{{album.id}}/">{{album.owner}}</a></li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>delete photo</title>
+</head>
+<body>
+    <h1>These photos are uploaded and shared by {{album.owner}}</h1>
+    <form action = "delete/" method = "post">
+        {% csrf_token %}
+        {% for picture in sharedphotos %}
+            <input type="radio" id="picture{{forloopcounter}}" name="picture" value="{{picture.id}}"/>
+            <label for="picture{{forloopcounter}}">
+                <img src="{{picture.image.url}}">
+                {% if picture.is_deleted %}
+                    <font color="red">deleted</font>
+                {% endif %}
+            </label><br>
+        {% endfor%}
+        <input type="submit" value="Delete photo">
+    </form>
+</body>
+</html>

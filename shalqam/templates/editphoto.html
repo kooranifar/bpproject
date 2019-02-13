@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>editphoto</title>
+</head>
+<body>
+ 	<h1>Wellcome <br>Please upload your photo</h1>
+ 	<form action="upload/" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{form}}
+	<input type="submit" value="Upload File" name="submit">
+	</form>
+
+
+</body>
+</html>
